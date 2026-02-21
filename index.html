@@ -61,38 +61,61 @@
     }
 
     /* セクション共通 */
-    section { padding: 100px 5%; max-width: 1200px; margin: auto; }
-    .section-title { text-align: center; margin-bottom: 60px; }
-    .section-title h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; }
+    section { padding: 80px 5%; max-width: 1200px; margin: auto; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; }
     .section-title p { color: var(--accent-red); font-weight: bold; letter-spacing: 2px; }
 
-    /* サービスカード（グリッド） */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 40px;
-      border-radius: 20px;
-      transition: 0.3s;
-      position: relative;
+    /* 料金表スタイル */
+    .price-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
     }
-    .card:hover { background: rgba(255,255,255,0.07); transform: translateY(-10px); border-color: var(--accent-red); }
-    .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
-    .card p { color: var(--text-gray); font-size: 0.95rem; }
-
-    /* 料金表 */
     .price-box {
       background: #fff;
       color: #000;
-      border-radius: 30px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     }
+    .price-header {
+      background: #f8f8f8;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent-red);
+    }
+    .price-header h3 { font-size: 1.4rem; font-weight: 900; }
+
     .price-table { width: 100%; border-collapse: collapse; }
-    .price-table th, .price-table td { padding: 25px; text-align: left; border-bottom: 1px solid #eee; }
-    .price-table th { background: #f8f8f8; color: #555; font-size: 0.8rem; }
-    .price-name { font-weight: 900; font-size: 1.2rem; }
-    .price-amount { color: var(--accent-red); font-weight: 900; font-size: 1.5rem; text-align: right; }
+    .price-table td { padding: 18px 20px; border-bottom: 1px solid #eee; }
+    .price-name { font-weight: 700; font-size: 1rem; color: #333; }
+    .price-amount { color: var(--accent-red); font-weight: 900; font-size: 1.3rem; text-align: right; }
+
+    /* オプションセクション */
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .option-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px dashed rgba(255,255,255,0.3);
+      padding: 25px;
+      border-radius: 15px;
+    }
+    .option-card h4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .option-price { color: var(--accent-red); font-weight: 900; }
+    .option-list { list-style: none; color: var(--text-gray); font-size: 0.9rem; }
+    .option-list li::before { content: "✓ "; color: var(--accent-red); }
 
     /* フッター予約ボタン（スマホ固定） */
     .fixed-action {
@@ -121,7 +144,7 @@
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
-      .grid { grid-template-columns: 1fr; }
+      .price-container { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -139,59 +162,61 @@
     <a href="tel:08064872937" class="btn-tel" style="padding: 20px 50px; border-radius: 50px; text-decoration: none; color: #fff; font-weight: 900;">ご予約はこちら</a>
   </header>
 
-  <section id="service">
-    <div class="section-title">
-      <p>OUR STRENGTH</p>
-      <h2>ON SIGHTが選ばれる理由</h2>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>最高級の「純水」洗車</h3>
-        <p>沖縄特有のミネラル成分を100%カットした純水を使用。水道水では不可能な、濁りのないクリアな輝きを引き出します。</p>
-      </div>
-      <div class="card" style="border-color: var(--accent-red);">
-        <h3>国家整備士の無料点検</h3>
-        <p>ただ洗うだけではありません。整備資格を持つプロが、洗車と同時にタイヤ・エンジンルームを点検。愛車の「安全」も守ります。</p>
-      </div>
-      <div class="card">
-        <h3>地域最安値の車検対応</h3>
-        <p>店舗維持費を削ることで、車検代行も地域最安値を実現。洗車ついでにお見積もり。余計な手数料は一切いただきません。</p>
-      </div>
-    </div>
-  </section>
-
   <section id="price">
     <div class="section-title">
       <p>PRICE LIST</p>
-      <h2>洗車コース料金</h2>
+      <h2>洗車メニュー</h2>
     </div>
-    <div class="price-box">
-      <table class="price-table">
-        <thead>
-          <tr><th>SIZE</th><th>MODEL</th><th>PRICE</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="price-name">軽自動車</td>
-            <td style="color:#666">N-BOX / デイズ / タント</td>
-            <td class="price-amount">¥4,400〜</td>
-          </tr>
-          <tr>
-            <td class="price-name">普通車</td>
-            <td style="color:#666">プリウス / ノート / ヤリス</td>
-            <td class="price-amount">¥5,500〜</td>
-          </tr>
-          <tr>
-            <td class="price-name">大型車・SUV</td>
-            <td style="color:#666">アルファード / ランドクルーザー</td>
-            <td class="price-amount">¥7,700〜</td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="padding: 30px; text-align: center; background: #fafafa;">
-        <p style="font-weight: bold; color: var(--accent-red);">★ 車検・修理・パーツ取付も格安受付中！</p>
-        <p style="font-size: 0.8rem; color: #999;">出張費：沖縄中部エリア無料（その他エリアはお問い合わせください）</p>
+
+    <div class="price-container">
+      <div class="price-box">
+        <div class="price-header">
+          <h3>基本洗車</h3>
+        </div>
+        <table class="price-table">
+          <tr><td class="price-name">軽自動車</td><td class="price-amount">¥3,000</td></tr>
+          <tr><td class="price-name">普通車</td><td class="price-amount">¥4,000</td></tr>
+          <tr><td class="price-name">ミニバン・大型</td><td class="price-amount">¥4,500〜</td></tr>
+        </table>
       </div>
+
+      <div class="price-box">
+        <div class="price-header">
+          <h3>撥水コーティング</h3>
+        </div>
+        <table class="price-table">
+          <tr><td class="price-name">軽自動車 / 普通車</td><td class="price-amount">¥3,500</td></tr>
+          <tr><td class="price-name">ミニバン</td><td class="price-amount">¥4,500</td></tr>
+          <tr><td class="price-name">ミニバン（大）</td><td class="price-amount">¥5,800</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="option-grid">
+      <div class="option-card">
+        <h4><span>車内清掃</span> <span class="option-price">+¥1,500</span></h4>
+        <ul class="option-list">
+          <li>車内拭き上げ・窓ガラス</li>
+          <li>ゴミ回収・掃除機がけ</li>
+        </ul>
+      </div>
+      <div class="option-card">
+        <h4><span>日常点検</span> <span class="option-price">¥800</span></h4>
+        <ul class="option-list">
+          <li>ウォッシャー液補充</li>
+          <li>エンジンルーム点検</li>
+          <li>タイヤ空気圧調整 など</li>
+        </ul>
+      </div>
+      <div class="option-card">
+        <h4><span>シート洗浄</span> <span class="option-price">¥5,500</span></h4>
+        <p style="font-size: 0.8rem; color: var(--text-gray);">※特殊機材による強力洗浄</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+      <p style="font-weight: bold; color: var(--accent-red); margin-bottom: 10px;">★ 国家整備士による車検・修理も格安受付中！</p>
+      <p style="font-size: 0.8rem; color: var(--text-gray);">出張費：沖縄中部エリア無料（その他エリアはお問い合わせください）</p>
     </div>
   </section>
 
@@ -208,4 +233,3 @@
 
 </body>
 </html>
-
