@@ -3,39 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ON SIGHT｜沖縄中部 プレミアム出張洗車＆格安車検点検</title>
+  <title>ON SIGHT｜沖縄中部 爽やか出張洗車＆安心車検点検</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #0a0e14; /* 深海のようなダークネイビー */
-      --accent-red: #ff4d4d; /* 整備士の情熱・最安値の赤 */
-      --gold-line: #d4af37;
-      --text-gray: #a0aec0;
+      --main-blue: #0077b6; /* 信頼感のある青 */
+      --light-blue: #e0f2f1; /* 爽やかな水色背景 */
+      --accent-orange: #ff9800; /* 親しみやすさと元気なアクセント */
+      --text-dark: #333333;
+      --bg-white: #ffffff;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Noto Sans JP', sans-serif; background-color: var(--main-bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-white); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
 
     /* ナビゲーション */
     nav {
-      padding: 20px 5%;
+      padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(10, 14, 20, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 2px solid var(--main-blue);
     }
-    .logo { font-family: 'Montserrat'; font-weight: 800; font-size: 1.8rem; letter-spacing: 2px; color: #fff; }
-    .logo span { color: var(--accent-red); }
+    .logo { font-family: 'Montserrat'; font-weight: 800; font-size: 1.8rem; letter-spacing: 1px; color: var(--main-blue); }
+    .logo span { color: var(--accent-orange); }
 
     /* ヒーローセクション */
     .hero {
-      height: 90vh;
-      background: linear-gradient(rgba(10,14,20,0.7), rgba(10,14,20,0.7)), 
+      height: 80vh;
+      background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
                   url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
@@ -46,25 +47,27 @@
       text-align: center;
       padding: 0 20px;
     }
-    .hero h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; line-height: 1.2; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 40px; }
+    .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 900; line-height: 1.3; color: var(--main-blue); text-shadow: 2px 2px 10px rgba(255,255,255,0.8); }
+    .hero p { font-size: 1.2rem; font-weight: bold; color: var(--text-dark); margin-bottom: 30px; background: rgba(255,255,255,0.7); padding: 5px 15px; border-radius: 10px; }
 
     /* 整備士バッジ */
     .badge {
-      background: var(--accent-red);
-      padding: 5px 20px;
+      background: var(--main-blue);
+      color: #fff;
+      padding: 8px 25px;
       border-radius: 50px;
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-bottom: 20px;
       display: inline-block;
+      box-shadow: 0 4px 15px rgba(0,119,182,0.3);
     }
 
     /* セクション共通 */
-    section { padding: 80px 5%; max-width: 1200px; margin: auto; }
+    section { padding: 60px 5%; max-width: 1200px; margin: auto; }
     .section-title { text-align: center; margin-bottom: 40px; }
-    .section-title h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; }
-    .section-title p { color: var(--accent-red); font-weight: bold; letter-spacing: 2px; }
+    .section-title h2 { font-size: 2rem; font-weight: 900; color: var(--main-blue); margin-bottom: 10px; }
+    .section-title p { color: var(--main-blue); font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; opacity: 0.7; }
 
     /* 料金表スタイル */
     .price-container {
@@ -75,23 +78,22 @@
     }
     .price-box {
       background: #fff;
-      color: #000;
-      border-radius: 20px;
+      border-radius: 30px;
       overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 40px rgba(0,119,182,0.1);
+      border: 2px solid var(--light-blue);
     }
     .price-header {
-      background: #f8f8f8;
-      padding: 20px;
+      background: var(--light-blue);
+      padding: 25px;
       text-align: center;
-      border-bottom: 2px solid var(--accent-red);
     }
-    .price-header h3 { font-size: 1.4rem; font-weight: 900; }
+    .price-header h3 { font-size: 1.4rem; font-weight: 900; color: var(--main-blue); }
 
-    .price-table { width: 100%; border-collapse: collapse; }
-    .price-table td { padding: 12px 20px; border-bottom: 1px solid #eee; }
-    .price-name { font-weight: 700; font-size: 0.9rem; color: #333; }
-    .price-amount { color: var(--accent-red); font-weight: 900; font-size: 1.1rem; text-align: right; }
+    .price-table { width: 100%; border-collapse: collapse; background: #fff; }
+    .price-table td { padding: 15px 20px; border-bottom: 1px solid var(--light-blue); }
+    .price-name { font-weight: 700; font-size: 1rem; color: #555; }
+    .price-amount { color: var(--main-blue); font-weight: 900; font-size: 1.2rem; text-align: right; }
 
     /* オプションセクション */
     .option-grid {
@@ -100,10 +102,10 @@
       gap: 20px;
     }
     .option-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px dashed rgba(255,255,255,0.3);
+      background: var(--light-blue);
       padding: 25px;
-      border-radius: 15px;
+      border-radius: 25px;
+      border: 1px solid rgba(0,119,182,0.1);
     }
     .option-card h4 {
       display: flex;
@@ -111,11 +113,11 @@
       align-items: center;
       margin-bottom: 15px;
       font-size: 1.1rem;
-      color: #fff;
+      color: var(--main-blue);
     }
-    .option-price { color: var(--accent-red); font-weight: 900; }
-    .option-list { list-style: none; color: var(--text-gray); font-size: 0.9rem; }
-    .option-list li::before { content: "✓ "; color: var(--accent-red); }
+    .option-price { color: var(--accent-orange); font-weight: 900; }
+    .option-list { list-style: none; color: #666; font-size: 0.95rem; }
+    .option-list li::before { content: "🫧 "; }
 
     /* フッター予約ボタン（スマホ固定） */
     .fixed-action {
@@ -124,26 +126,28 @@
       left: 5%;
       right: 5%;
       display: flex;
-      gap: 10px;
+      gap: 15px;
       z-index: 2000;
     }
     .btn {
       flex: 1;
       padding: 18px;
-      border-radius: 15px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: 900;
       text-align: center;
-      font-size: 1rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      font-size: 1.1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
     }
-    .btn-tel { background: var(--accent-red); color: #fff; }
+    .btn:active { transform: scale(0.95); }
+    .btn-tel { background: var(--main-blue); color: #fff; }
     .btn-line { background: #06c755; color: #fff; }
 
-    footer { text-align: center; padding: 100px 20px 150px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-gray); font-size: 0.8rem; }
+    footer { text-align: center; padding: 60px 20px 150px; background: var(--light-blue); color: var(--main-blue); font-size: 0.85rem; border-radius: 50px 50px 0 0; }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
+      .hero h1 { font-size: 2.2rem; }
       .price-container { grid-template-columns: 1fr; }
     }
   </style>
@@ -152,14 +156,14 @@
 
   <nav>
     <div class="logo">ON<span>SIGHT</span></div>
-    <div style="font-size: 0.7rem; color: var(--text-gray);">OKINAWA PREMIUM</div>
+    <div style="font-size: 0.8rem; font-weight: bold; color: var(--main-blue);">沖縄中部の出張洗車</div>
   </nav>
 
   <header class="hero">
-    <div class="badge">国家整備士 資格保持</div>
-    <h1>愛車を、<br>新車以上の感動へ。</h1>
-    <p>沖縄中部エリア限定。移動ゼロで完結するプロの洗車と点検。</p>
-    <a href="tel:08064872937" class="btn-tel" style="padding: 20px 50px; border-radius: 50px; text-decoration: none; color: #fff; font-weight: 900;">ご予約はこちら</a>
+    <div class="badge">国家整備士がお伺いします！</div>
+    <h1>水しぶき弾ける、<br>新車のような輝きを。</h1>
+    <p>お家で待つだけ！プロの洗車と点検で愛車リフレッシュ</p>
+    <a href="tel:08064872937" class="btn-tel" style="padding: 18px 45px; border-radius: 50px; text-decoration: none; color: #fff; font-weight: 900; box-shadow: 0 10px 20px rgba(0,119,182,0.3);">今すぐ予約する</a>
   </header>
 
   <section id="price">
@@ -171,67 +175,67 @@
     <div class="price-container">
       <div class="price-box">
         <div class="price-header">
-          <h3>基本洗車（撥水コーティング）</h3>
-          <p style="font-size: 0.8rem; color: #666;">※タイヤワックス付</p>
+          <h3>ピカピカ基本洗車</h3>
+          <p style="font-size: 0.8rem; color: #555; margin-top: 5px;">撥水コート＆タイヤワックス込</p>
         </div>
         <table class="price-table">
-          <tr><td class="price-name">SS（ワゴンR等）</td><td class="price-amount">¥3,000</td></tr>
-          <tr><td class="price-name">S（Note・フィット等）</td><td class="price-amount">¥3,500</td></tr>
-          <tr><td class="price-name">M（プリウス等）</td><td class="price-amount">¥4,200</td></tr>
-          <tr><td class="price-name">L（クラウン・SUV等）</td><td class="price-amount">¥4,800</td></tr>
-          <tr><td class="price-name">XL（ハイエース等）</td><td class="price-amount">¥5,500</td></tr>
+          <tr><td class="price-name">SS（軽自動車など）</td><td class="price-amount">¥3,000</td></tr>
+          <tr><td class="price-name">S（コンパクトカーなど）</td><td class="price-amount">¥3,500</td></tr>
+          <tr><td class="price-name">M（セダンなど）</td><td class="price-amount">¥4,200</td></tr>
+          <tr><td class="price-name">L（大型ミニバン・SUV）</td><td class="price-amount">¥4,800</td></tr>
+          <tr><td class="price-name">XL（特大車）</td><td class="price-amount">¥5,500</td></tr>
         </table>
       </div>
 
       <div class="price-box">
         <div class="price-header">
-          <h3>プレミアム洗車</h3>
-          <p style="font-size: 0.8rem; color: #666;">※頑固な水垢汚れに</p>
+          <h3>感動プレミアム洗車</h3>
+          <p style="font-size: 0.8rem; color: #555; margin-top: 5px;">頑固な汚れもスッキリ解消</p>
         </div>
         <table class="price-table">
-          <tr><td class="price-name">SS（ワゴンR等）</td><td class="price-amount">¥8,000</td></tr>
-          <tr><td class="price-name">S（Note・フィット等）</td><td class="price-amount">¥9,000</td></tr>
-          <tr><td class="price-name">M（プリウス等）</td><td class="price-amount">¥10,500</td></tr>
-          <tr><td class="price-name">L（クラウン・SUV等）</td><td class="price-amount">¥12,000</td></tr>
-          <tr><td class="price-name">XL（ハイエース等）</td><td class="price-amount">¥13,500</td></tr>
+          <tr><td class="price-name">SS（軽自動車など）</td><td class="price-amount">¥8,000</td></tr>
+          <tr><td class="price-name">S（コンパクトカーなど）</td><td class="price-amount">¥9,000</td></tr>
+          <tr><td class="price-name">M（セダンなど）</td><td class="price-amount">¥10,500</td></tr>
+          <tr><td class="price-name">L（大型ミニバン・SUV）</td><td class="price-amount">¥12,000</td></tr>
+          <tr><td class="price-name">XL（特大車）</td><td class="price-amount">¥13,500</td></tr>
         </table>
       </div>
     </div>
 
     <div class="option-grid">
       <div class="option-card">
-        <h4><span>車内清掃</span> <span class="option-price">¥1,500</span></h4>
+        <h4><span>車内まるごと清掃</span> <span class="option-price">¥1,500</span></h4>
         <ul class="option-list">
           <li>掃除機がけ・ゴミ捨て</li>
-          <li>窓拭き</li>
+          <li>内窓・ダッシュボード拭き上げ</li>
         </ul>
       </div>
       <div class="option-card">
-        <h4><span>シート洗浄</span> <span class="option-price">5千円〜</span></h4>
+        <h4><span>シートのシミ抜き</span> <span class="option-price">¥5,000〜</span></h4>
         <ul class="option-list">
           <li>1シート：¥5,000</li>
-          <li>4シート：¥15,000</li>
+          <li>全シートセット：¥15,000</li>
         </ul>
       </div>
     </div>
 
-    <div style="margin-top: 40px; text-align: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-      <p style="font-weight: bold; color: var(--accent-red); margin-bottom: 5px;">★ 車検ご相談承ります</p>
-      <p style="font-size: 0.9rem; color: #fff;">（車内清掃・マット清掃付き）</p>
+    <div style="margin-top: 40px; text-align: center; background: #fff7ed; padding: 25px; border-radius: 25px; border: 2px dashed var(--accent-orange);">
+      <p style="font-weight: bold; color: var(--accent-orange); margin-bottom: 5px; font-size: 1.1rem;">★ 国家整備士の安心点検付き車検</p>
+      <p style="font-size: 0.9rem; color: #666;">車内清掃・マット洗浄サービス中！お見積もりは無料です。</p>
     </div>
   </section>
 
   <footer>
-    <p>ON SIGHT - OKINAWA MOBILE DETAILING</p>
+    <p style="font-weight: bold; margin-bottom: 10px;">ON SIGHT - OKINAWA MOBILE DETAILING</p>
+    <p>沖縄県中部エリア（宜野湾・北谷・沖縄市・浦添など）</p>
     <p>代表直通：080-6487-2937</p>
-    <p style="margin-top: 20px;">© 2026 ON SIGHT All Rights Reserved.</p>
+    <p style="margin-top: 25px; opacity: 0.6;">© 2026 ON SIGHT All Rights Reserved.</p>
   </footer>
 
   <div class="fixed-action">
-    <a href="tel:08064872937" class="btn btn-tel">📞 電話予約</a>
-    <a href="#" class="btn btn-line">公式LINE相談</a>
+    <a href="tel:08064872937" class="btn btn-tel">📞 電話で予約</a>
+    <a href="#" class="btn btn-line">LINEで相談</a>
   </div>
 
 </body>
 </html>
-
