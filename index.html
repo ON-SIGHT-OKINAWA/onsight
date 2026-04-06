@@ -72,8 +72,8 @@
     /* 料金表スタイル */
     .price-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
       margin-bottom: 40px;
     }
     .price-box {
@@ -82,18 +82,27 @@
       overflow: hidden;
       box-shadow: 0 10px 40px rgba(0,119,182,0.1);
       border: 2px solid var(--light-blue);
+      display: flex;
+      flex-direction: column;
     }
     .price-header {
       background: var(--light-blue);
-      padding: 25px;
+      padding: 25px 15px;
       text-align: center;
     }
-    .price-header h3 { font-size: 1.4rem; font-weight: 900; color: var(--main-blue); }
+    .price-header h3 { font-size: 1.3rem; font-weight: 900; color: var(--main-blue); }
 
-    .price-table { width: 100%; border-collapse: collapse; background: #fff; }
-    .price-table td { padding: 15px 20px; border-bottom: 1px solid var(--light-blue); }
-    .price-name { font-weight: 700; font-size: 1rem; color: #555; }
-    .price-amount { color: var(--main-blue); font-weight: 900; font-size: 1.2rem; text-align: right; }
+    .price-table { width: 100%; border-collapse: collapse; background: #fff; flex-grow: 1; }
+    .price-table td { padding: 15px 15px; border-bottom: 1px solid var(--light-blue); }
+    .price-name { font-weight: 700; font-size: 0.9rem; color: #555; }
+    .price-amount { color: var(--main-blue); font-weight: 900; font-size: 1.1rem; text-align: right; }
+
+    /* 特徴的なプランの強調（任意） */
+    .price-box.featured {
+      border-color: var(--main-blue);
+      transform: scale(1.02);
+      z-index: 10;
+    }
 
     /* オプションセクション */
     .option-grid {
@@ -149,6 +158,7 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .price-container { grid-template-columns: 1fr; }
+      .price-box.featured { transform: none; }
     }
   </style>
 </head>
@@ -175,6 +185,20 @@
     <div class="price-container">
       <div class="price-box">
         <div class="price-header">
+          <h3>お手軽シンプル洗車</h3>
+          <p style="font-size: 0.8rem; color: #555; margin-top: 5px;">【ワックス無し】手洗いのみ</p>
+        </div>
+        <table class="price-table">
+          <tr><td class="price-name">SS（軽自動車など）</td><td class="price-amount">¥2,500</td></tr>
+          <tr><td class="price-name">S（コンパクトカーなど）</td><td class="price-amount">¥3,000</td></tr>
+          <tr><td class="price-name">M（セダンなど）</td><td class="price-amount">¥3,700</td></tr>
+          <tr><td class="price-name">L（大型ミニバン・SUV）</td><td class="price-amount">¥4,300</td></tr>
+          <tr><td class="price-name">XL（特大車）</td><td class="price-amount">¥5,000</td></tr>
+        </table>
+      </div>
+
+      <div class="price-box featured">
+        <div class="price-header" style="background: #e1f5fe;">
           <h3>ピカピカ基本洗車</h3>
           <p style="font-size: 0.8rem; color: #555; margin-top: 5px;">撥水コート＆タイヤワックス込</p>
         </div>
