@@ -131,8 +131,8 @@
       <tr><th>車検基本整備料（税込）</th><td id="fee">¥13,200</td></tr>
       <tr><th>重量税</th><td id="tax">¥6,600</td></tr>
       <tr><th>自賠責保険料（24か月・沖縄）</th><td id="jibai">¥10,700</td></tr>
-      <tr><th>印紙代</th><td id="inshi">¥2,800</td></tr>
-      <tr class="total"><th>合計の目安</th><td id="total">約 ¥34,000〜</td></tr>
+      <tr><th>印紙代</th><td id="inshi">¥2,500</td></tr>
+      <tr class="total"><th>合計の目安</th><td id="total">約 ¥33,000〜</td></tr>
     </table>
     <p class="small">※乗用車の重量税は車両重量でも変わります（小型＝〜1.0t、中型＝〜1.5t、大型＝〜2.0tで計算）。エコカーは重量税が安くなる場合があります（軽自動車は¥5,000など）。部品交換・消耗品が必要な場合は別途料金がかかります。OBD検査の対象車は、別途検査料がかかる場合があります。すべて目安です。正確な金額は無料見積もりでご案内します。</p>
   </section>
@@ -197,7 +197,7 @@
     ※ドライブシャフトブーツは、シャフトを外さずに交換できる「分割式」を標準としています。分割式の設定がない車種は従来方式での交換となり、外側 ¥8,800・内側 ¥11,000（税別）です。<br>
     ※車種・年式・車の状態（サビによる固着など）によって金額が変わる場合があります。その場合は作業前にご説明し、ご了承をいただいてから進めます。サビの固着がひどい場合と、電動パーキングブレーキ付きのリヤパッド交換は、時間計算（1時間 ¥7,700・税別）となる場合があります。<br>
     ※表にない作業も時間計算が基本です。まずは無料見積もりでご確認ください。車検証の写真をInstagramのDM（@onsight.2026）へ送っていただければ、無料で簡易見積もりをお出しします。<br>
-    （2026年11月23日更新）</p>
+    （2026年11月27日更新）</p>
   </section>
 
   <section>
@@ -242,22 +242,21 @@
 </div>
 <script>
   var DATA = {
-    kei:   {fee:13200, jibai:10700, tax:[6600,8200,8800], ex:"例：N-BOX・タント・ハスラー・ワゴンRなど"},
-    small: {fee:15400, jibai:10620, tax:[16400,22800,25200], ex:"例：ヤリス・フィット・ノート・アクアなど（車両重量〜1.0tで計算）"},
-    mid:   {fee:17600, jibai:10620, tax:[24600,34200,37800], ex:"例：プリウス・カローラ・カローラクロスなど（車両重量〜1.5tで計算）"},
-    large: {fee:19800, jibai:10620, tax:[32800,45600,50400], ex:"例：アルファード・クラウン・ハリアーなど（車両重量〜2.0tで計算）"}
+    kei:   {fee:13200, jibai:10700, inshi:2500, tax:[6600,8200,8800], ex:"例：N-BOX・タント・ハスラー・ワゴンRなど"},
+    small: {fee:15400, jibai:10620, inshi:2500, tax:[16400,22800,25200], ex:"例：ヤリス・フィット・ノート・アクアなど（車両重量〜1.0tで計算）"},
+    mid:   {fee:17600, jibai:10620, inshi:2600, tax:[24600,34200,37800], ex:"例：プリウス・カローラ・カローラクロスなど（車両重量〜1.5tで計算）"},
+    large: {fee:19800, jibai:10620, inshi:2600, tax:[32800,45600,50400], ex:"例：アルファード・クラウン・ハリアーなど（車両重量〜2.0tで計算）"}
   };
-  var INSHI = 2800;
   var curClass = "kei", curAge = 0;
   function yen(n){ return "¥" + n.toLocaleString("ja-JP"); }
   function render(){
     var d = DATA[curClass];
-    var sum = d.fee + d.tax[curAge] + d.jibai + INSHI;
+    var sum = d.fee + d.tax[curAge] + d.jibai + d.inshi;
     var total = Math.ceil(sum / 1000) * 1000;
     document.getElementById("fee").textContent = yen(d.fee);
     document.getElementById("tax").textContent = yen(d.tax[curAge]);
     document.getElementById("jibai").textContent = yen(d.jibai);
-    document.getElementById("inshi").textContent = yen(INSHI);
+    document.getElementById("inshi").textContent = yen(d.inshi);
     document.getElementById("total").textContent = "約 " + yen(total) + "〜";
     document.getElementById("examples").textContent = d.ex;
   }
